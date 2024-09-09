@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+
+    <!-- CSS e Bootstrap -->
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Exercicio 1</h1>
+          <p class="lead">Escreva <b>UMA</b> palavra para ser invertida</p>
+          <div class="input-group mb-3">
+            <input id="pala" type="text" class="form-control" placeholder="Palavra" aria-label="Palavra" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button onclick="reverso()" class="btn btn-outline-secondary" type="button" id="button-addon2">Mudar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Exercicio 2</h1>
+          <p class="lead">Escreva uma <b>FRASE</b> para ser invertida</p>
+          <div class="input-group mb-3">
+            <input id="fra" type="text" class="form-control" placeholder="Palavra" aria-label="Palavra" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button onclick="mudaFrase()" class="btn btn-outline-secondary" type="button" id="button-addon2">Mudar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Carregar jQuery primeiro -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!-- Depois Popper.js e Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+    function reverso()
+    {
+        let palavra = document.getElementById("pala").value;
+        let invert =palavra.split("").reverse().join("");
+        alert(invert);
+    }
+
+    function mudaFrase()
+    {
+        let vetAux = [];
+        let vetR=[];
+        let frase= document.getElementById("fra").value;
+
+        vetAux = frase.split(" ");
+        for(let i=vetAux.length, j=0; i > -1;i--,j++)
+            vetR[j]=vetAux[i];
+
+        alert(vetR.join(" "));
+    }
+    function buscar(vet, palavra) {
+            for (let i = 0; i < vet.length; i++) 
+            {
+                if (vet[i] === palavra)
+                {
+                    return true; 
+                }
+            }
+            return false; 
+        }
+</script>
+
+</body>
+</html>
